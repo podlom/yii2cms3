@@ -2,10 +2,13 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use zxbodya\yii2\elfinder\ElFinderInput;
+
 
 /* @var $this yii\web\View */
 /* @var $model common\models\News */
 /* @var $form yii\widgets\ActiveForm */
+
 ?>
 
 <div class="news-form">
@@ -32,7 +35,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'updated_at')->textInput() ?>
 
-    <?= $form->field($model, 'img_url')->textInput(['maxlength' => true]) ?>
+    <?php /* $form->field($model, 'img_url')->textInput(['maxlength' => true]) */ ?>
+
+    <?= $form->field($model, 'img_url')->widget(
+        ElFinderInput::className(),
+        ['connectorRoute' => 'el-finder/connector',]
+    ) ?>
 
     <?= $form->field($model, 'sort')->textInput() ?>
 
