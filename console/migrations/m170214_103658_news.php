@@ -17,8 +17,9 @@ class m170214_103658_news extends Migration
             'lang' => $this->string(2)->defaultValue("ru"),
             'published' => $this->smallInteger(1)->defaultValue(0),
             'created_at' => $this->timestamp()->defaultValue(null),
-            'updated_at' => 'timestamp on update current_timestamp',
-        ], 'ENGINE = INNODB AUTO_INCREMENT = 1 CHARACTER SET utf8 COLLATE utf8_general_ci');
+            'updated_at' => $this->timestamp()->defaultValue(date('Y-m-d H:i:s')),
+        ]);
+        // 'ENGINE = INNODB AUTO_INCREMENT = 1 CHARACTER SET utf8 COLLATE utf8_general_ci'
     }
 
     public function down()

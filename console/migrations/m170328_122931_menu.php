@@ -15,8 +15,10 @@ class m170328_122931_menu extends Migration
             'type' => $this->integer()->notNull()->defaultValue(0),
             'sort' => $this->integer()->notNull()->defaultValue(0),
             'created_at' => $this->timestamp()->defaultValue(null),
-            'updated_at' => 'timestamp on update current_timestamp',
-        ], 'ENGINE = INNODB AUTO_INCREMENT = 1 CHARACTER SET utf8 COLLATE utf8_general_ci');
+            // 'updated_at' => 'timestamp on update current_timestamp',
+            'updated_at' => $this->timestamp()->defaultValue(date('Y-m-d H:i:s')),
+        ]);
+        // 'ENGINE = INNODB AUTO_INCREMENT = 1 CHARACTER SET utf8 COLLATE utf8_general_ci'
     }
 
     public function down()

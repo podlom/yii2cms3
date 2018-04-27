@@ -41,7 +41,11 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'GET /<slug>' => 'page/view',
+                //
+                'news/index' => 'news/index',
+                'news/<slug>' => 'news/view',
+                //
+                '/<slug>' => 'page/view',
             ],
         ],
 

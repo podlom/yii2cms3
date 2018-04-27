@@ -3,7 +3,8 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=yii2advanced',
+            // 'dsn' => 'mysql:host=localhost;dbname=yii2advanced',
+            'dsn' => 'sqlite:' . __DIR__ . DIRECTORY_SEPARATOR . 'yii2cms3.db',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',

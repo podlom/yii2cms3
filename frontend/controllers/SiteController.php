@@ -72,6 +72,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        if (Yii::$app->request->isAjax) {
+            // TODO: check ajax request data
+        }
+
         return $this->render('index');
     }
 

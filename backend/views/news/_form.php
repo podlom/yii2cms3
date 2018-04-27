@@ -51,7 +51,9 @@ use dosamigos\tinymce\TinyMce;
 
     <?= $form->field($model, 'lang')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'published')->textInput() ?>
+    <?= $form->field($model, 'sort')->textInput() ?>
+
+    <?= $form->field($model, 'published')->checkbox() ?>
 
     <?= $form->field($model, 'created_at')->textInput() ?>
 
@@ -59,7 +61,6 @@ use dosamigos\tinymce\TinyMce;
 
     <?= $form->field($model, 'img_url')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'sort')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
